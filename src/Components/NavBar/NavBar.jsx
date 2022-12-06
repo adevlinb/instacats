@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import './NavBar.css'
 import * as usersAPI from '../../utilities/users-api';
 
 export default function NavBar({ user, setUser }) {

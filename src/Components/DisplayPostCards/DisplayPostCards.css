@@ -2,10 +2,20 @@
 .post-card {
     width: 10vw;
     height: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 5%;
 }
 
 .post-card > img {
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
+}
+
+.post-card > h5 {
+    margin: 0;
 }

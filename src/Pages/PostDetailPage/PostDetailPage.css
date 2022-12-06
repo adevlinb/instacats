@@ -1,4 +1,15 @@
+.post-detail-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .post-detail-card > img {
     width: 20vw;
-    border-radius: 50%;
+    border-radius: 5%;
+}
+
+.comments-container {
+    background-color: aliceblue;
 }
