@@ -1,12 +1,23 @@
-import SignUpForm from '../../Components/SignUpForm/SignUpForm'
+import SignUpForm from '../../Components/SignUpForm/SignUpForm';
+import LoginForm from '../../Components/LoginForm/LoginForm';
+import { useState } from 'react';
 
 export default function LandingPage({ setUser }) {
-
+    const [showLogin, setShowLogin] = useState(true);
 
     return (
         <>
-        <h1>Sign In!</h1>
-        <SignUpForm setUser={setUser}/>
+            {showLogin ?
+                <div className="vertical">
+                    <button onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Sign Up' : 'Log In'}</button>
+                    <LoginForm setUser={setUser} />
+                </div>
+                :
+                <div className="vertical">
+                    <button onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Sign Up' : 'Log In'}</button>
+                    <SignUpForm setUser={setUser} />
+                </div>
+            }
         </>
     )
 }

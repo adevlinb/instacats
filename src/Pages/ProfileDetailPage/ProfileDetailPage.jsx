@@ -1,5 +1,5 @@
-export default function ProfileDetailPage() {
+export default function ProfileDetailPage({ posts }) {
     return (
-        <h1>DetailPage</h1>
+        <h1>Profile Detail Page</h1>
     )
 }

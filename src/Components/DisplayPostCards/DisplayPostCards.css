@@ -1,0 +1,11 @@
+
+.post-card {
+    width: 10vw;
+    height: 10vw;
+}
+
+.post-card > img {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+}
