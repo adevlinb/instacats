@@ -11,7 +11,7 @@ export function login(credentials) {
 }
 
 export function logout() {
-    return sendRequest('/logout/');
+    return sendRequest('/api-auth/logout/');
 }
 
 export function userProfile() {

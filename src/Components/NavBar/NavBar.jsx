@@ -1,11 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom'
+import * as usersAPI from '../../utilities/users-api';
 
 export default function NavBar({ user, setUser }) {
     const navigate = useNavigate();
 
     async function logout() {
-        setUser();
-        navigate("/")
+        try{
+            usersAPI.logout();
+            setUser();
+            navigate("/")
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (

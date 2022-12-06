@@ -3,6 +3,7 @@ import getCSRF from './csrftoken';
 export default async function sendRequest(url, method = 'GET', payload = null) {
     const options = { method };
     if (payload) {
+        options.credentials = 'include';
         options.headers = {
             'Content-Type': 'application/json',
             'x-csrftoken': getCSRF('csrftoken'),
