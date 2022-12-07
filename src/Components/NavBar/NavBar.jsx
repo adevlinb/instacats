@@ -17,11 +17,20 @@ export default function NavBar({ user, setUser, showModal, setShowModal }) {
     }
 
     return (
-        <nav>
-            <h3>Welcome {user.full_name}</h3>
-            <Link to="/">InstaCats!</Link>
-            <button onClick={() => setShowModal(!showModal)}>Make A Post!</button>
-            <button onClick={logout}>Logout</button>
-        </nav>
+        <>
+        {user ?
+            <nav id="nav">
+                <h3>Welcome {user.email}</h3>
+                <Link to="/">InstaCats!</Link>
+                <button onClick={() => setShowModal(!showModal)}>Make A Post!</button>
+                <button onClick={logout}>Logout</button>
+            </nav>
+            :
+            <nav>
+                <h3>Welcome to InstaCats!</h3>
+            </nav>
+
+        }
+        </>
     );
 }

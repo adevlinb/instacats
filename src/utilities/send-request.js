@@ -1,7 +1,6 @@
 import getCSRF from './csrftoken';
 
 export default async function sendRequest(url, method = 'GET', payload = null, payloadIsFormData = false) {
-    console.log(payload, "sendrequest")
     const options = { method };
     if (payload) {
         options.credentials = 'include';
@@ -12,7 +11,6 @@ export default async function sendRequest(url, method = 'GET', payload = null, p
             };
         options.body = payloadIsFormData ? payload : JSON.stringify(payload);
     }
-    console.log("pay")
     const res = await fetch(url, options);
     if (url === "/api/users/login/") {
         try {

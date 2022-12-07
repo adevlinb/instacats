@@ -4,6 +4,6 @@
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     align-items: center;
-    grid-gap: 2vh;
-    padding: 2vh;
+    grid-gap: 5vh;
+    padding-top: 5vh;
 }

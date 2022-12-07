@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar';
 import PostsListPage from '../PostsListPage/PostsListPage'
 import LandingPage from '../LandingPage/LandingPage';
-import ProfileDetailPage from '../ProfileDetailPage/ProfileDetailPage';
 import PostDetailPage from '../PostDetailPage/PostDetailPage';
 import CreatePostModal from '../../Components/CreatePostModal/CreatePostModal';
+import Footer from '../../Components/Footer/Footer';
 import * as postsAPI from '../../utilities/posts-api'
 
 export default function App() {
@@ -37,14 +37,20 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} showModal={showModal} setShowModal={setShowModal} />
           <Routes>
-            <Route path="/profile" element={<ProfileDetailPage />} />
-            <Route path="/post/:postpk" element={<PostDetailPage posts={posts} setPosts={setPosts}/>} />
-            <Route path="*" element={<PostsListPage posts={posts}/>} />
+              <Route path="/post/:postpk" element={<PostDetailPage posts={posts} setPosts={setPosts}/>} />
+              <Route path="*" element={<PostsListPage posts={posts}/>} />
           </Routes>
+          <Footer />
           {showModal && <CreatePostModal showModal={showModal} setShowModal={setShowModal} handlePhotoUpload={handlePhotoUpload} />}
         </>
         :
-        <LandingPage setUser={setUser}/>
+        <>
+          <NavBar user={user} setUser={setUser} showModal={showModal} setShowModal={setShowModal} />
+          <div className='body-container'>
+            <LandingPage setUser={setUser}/>
+          </div>
+          <Footer />
+        </>
       }
     </>
   );

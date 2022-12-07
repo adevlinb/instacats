@@ -40,9 +40,12 @@ export default function PostsListPage({ posts }) {
     ));
 
     return (
-        <div className='posts-container'>
-            {displayPosts}
-            <button onClick={showMoreCats}>Show More Cats</button>
+        <div className='body-container'>
+            <div className='posts-container'>
+                {displayPosts}
+                <button onClick={showMoreCats}>Show More Cats</button>
+            </div>
+
         </div>
     )
 }

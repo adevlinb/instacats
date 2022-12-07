@@ -6,8 +6,9 @@ export default function SignUpForm({ setUser }) {
     let csrftoken = getCSRF('csrftoken');
 
     const [formData, setFormData] = useState({
-            name: '',
             email: '',
+            first_name: '',
+            last_name: '',
             password: '',
             confirm: '',
             error: ''
@@ -40,14 +41,16 @@ export default function SignUpForm({ setUser }) {
                 <div className="form-container">
                     <form autoComplete="off" onSubmit={handleSubmit}>
                         <input type="hidden" name="csrfmiddlewaretoken" value={csrftoken} />
-                        <label>Name</label>
-                        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
                         <label>Email</label>
                         <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+                        <label>Full Name</label>
+                        <input type="text" name="first_name" value={formData.first_name} onChange={handleChange} required />
+                        <label>Nick-Name</label>
+                        <input type="text" name="last_name" value={formData.last_name} onChange={handleChange} required />
                         <label>Password</label>
-                        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+                        <input type="password" autoComplete="off" name="password" value={formData.password} onChange={handleChange} required />
                         <label>Confirm</label>
-                        <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+                        <input type="password" autoComplete="off" name="confirm" value={formData.confirm} onChange={handleChange} required />
                         <button type="submit" disabled={disable}>SIGN UP</button>
                     </form>
                 </div>

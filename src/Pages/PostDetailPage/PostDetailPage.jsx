@@ -41,7 +41,7 @@ export default function PostDetailPage({ posts, setPosts }) {
 
 
     return (
-        <>
+        <div className='body-container'>
             <h1>Post Detail Page</h1>
             {postDetail ?
             <div className="post-detail-card" >
@@ -56,7 +56,7 @@ export default function PostDetailPage({ posts, setPosts }) {
                 :
                 ""
             }
-        </>
+        </div>
 
     )
 }
