@@ -6,11 +6,13 @@ import PostsListPage from '../PostsListPage/PostsListPage'
 import LandingPage from '../LandingPage/LandingPage';
 import ProfileDetailPage from '../ProfileDetailPage/ProfileDetailPage';
 import PostDetailPage from '../PostDetailPage/PostDetailPage';
+import CreatePostModal from '../../Components/CreatePostModal/CreatePostModal';
 
 export default function App() {
 
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
 
     useEffect(() => {
@@ -26,12 +28,13 @@ export default function App() {
     <>
       { user ?
         <>
-          <NavBar user={user} setUser={setUser} />
+          <NavBar user={user} setUser={setUser} showModal={showModal} setShowModal={setShowModal} />
           <Routes>
             <Route path="/profile" element={<ProfileDetailPage />} />
-            <Route path="/post/:postpk" element={<PostDetailPage posts={posts}/>} />
+            <Route path="/post/:postpk" element={<PostDetailPage posts={posts} setPosts={setPosts}/>} />
             <Route path="*" element={<PostsListPage posts={posts}/>} />
           </Routes>
+          {showModal && <CreatePostModal showModal={showModal} setShowModal={setShowModal} />}
         </>
         :
         <LandingPage setUser={setUser}/>

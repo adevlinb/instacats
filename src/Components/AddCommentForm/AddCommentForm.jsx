@@ -10,11 +10,22 @@ export default function AddCommentForm({submitComment, postPK}) {
         setFormData({...formData, [evt.target.name]: evt.target.value})
     }
 
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        submitComment(formData)
+        setFormData({
+            text: '',
+            entry: postPK
+        });
+    }
+
     return (
         <>
-            <form onSubmit={() => submitComment(formData)}>
-                <input type="text" name="text" value={formData.text} onChange={handleChange}/>
-                <button type='submit'>Add Comment!</button>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="add-comment">Add A Comment
+                <input type="text" id="add-comment" name="text" value={formData.text} onChange={handleChange}/>
+                </label>
+                <button type='submit'>Submit</button>
             </form>
         </>
     )
