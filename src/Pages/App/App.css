@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 78vh;
+  padding-bottom: 10vh;
 }
 
 #root {

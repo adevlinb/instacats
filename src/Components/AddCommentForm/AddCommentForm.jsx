@@ -23,11 +23,16 @@ export default function AddCommentForm({submitComment, postPK}) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ width: "100%" }}>
                 <input type="hidden" name="csrfmiddlewaretoken" value={csrftoken} />
-                <label htmlFor="add-comment">Add A Comment
-                <input type="text" id="add-comment" name="text" value={formData.text} onChange={handleChange}/>
-                </label>
+                <input type="text"
+                    id="add-comment"
+                    required
+                    placeholder="Add Comment"
+                    name="text"
+                    value={formData.text}
+                    onChange={handleChange}
+                    style={{ width: "80%" }}/>
                 <button type='submit'>Submit</button>
             </form>
         </>

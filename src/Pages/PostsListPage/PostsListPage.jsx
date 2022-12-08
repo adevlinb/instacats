@@ -3,26 +3,24 @@ import DisplayPostCards from '../../Components/DisplayPostCards/DisplayPostCards
 import { useState, useEffect } from 'react';
 
 export default function PostsListPage({ posts }) {
-    const [postsToShow, setPostsToShow] = useState(10)
+    const [postsToShow, setPostsToShow] = useState(posts.length - 10)
     const [postsToMap, setPostsToMap] = useState([]);
 
     useEffect(() => {
         function setPosts() {
             let newArr = [];
-            for (let i = 0; i < posts.length; i++) {
-                if (i < postsToShow) {
-                    newArr.push(posts[i])
-                } else {
-                    break
-                }
+            let i = posts.length - 1;
+            while (i > postsToShow) {
+                newArr.push(posts[i]);
+                i--;
             }
             setPostsToMap(newArr);
         }
         setPosts();
-    }, [postsToShow]);
+    }, [postsToShow, posts]);
 
     function showMorePosts() {
-        setPostsToShow(initial => initial + 10);
+        setPostsToShow(initial => initial - 10);
     }
 
 
@@ -36,7 +34,6 @@ export default function PostsListPage({ posts }) {
                 {displayPosts}
                 <button onClick={showMorePosts}>Show More Cats</button>
             </div>
-
         </div>
     )
 }

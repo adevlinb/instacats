@@ -1,7 +1,7 @@
 .modal-background {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(200, 200, 200);
+    background-color: rgba(200, 200, 200, 0.8);
     position: fixed;
     top: 0;
     display: flex;
@@ -16,5 +16,36 @@
     box-shadow: rgba(0,0,0, 0.35), 0px, 5px, 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 25px;
+    border-radius: 30%;
+    border: 1px dotted black;
+}
+
+.modal-container > img {
+    max-width: 35vw;
+    max-height: 35vh;
+    border-radius: 7.5%;
+}
+
+#close-button {
+    position: absolute;
+    right: 20vh;
+    top: 15vh;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+    transition-duration: 0.4s;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(225, 225, 225);
+    border: 2px solid #5f5f5f;
+    background-color: #5f5f5f;
+}
+
+#close-button:hover {
+    background-color: white;
+    color: black;
 }

@@ -24,7 +24,7 @@ export default function PostDetailPage({ posts, setPosts }) {
 
     if (postDetail) {
         image = `http://catstagram.lofty.codes/media/${postDetail.image}`
-        comments = postDetail.comments.map((comment) => (
+        comments = postDetail.comments.reverse().map((comment) => (
             <DisplayComments comment={comment} key={comment.pk} />
         ));
     }

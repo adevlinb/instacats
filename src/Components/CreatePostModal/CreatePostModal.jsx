@@ -8,6 +8,12 @@ export default function CreatePostModal({ showModal, setShowModal, handlePhotoUp
     const [title, setTitle] = useState('');
     const fileInputRef = useRef();
 
+    const [image, setImage] = useState(null)
+    const placeholder = "https://www.namepros.com/attachments/empty-png.89209/";
+    const onImageError = (e) => {
+        e.target.src = placeholder;
+    }
+
     function handleSubmit(evt) {
         evt.preventDefault();
         if (fileInputRef.current.value === '' || title === '') return;
@@ -22,17 +28,22 @@ export default function CreatePostModal({ showModal, setShowModal, handlePhotoUp
         fileInputRef.current.value = '';
     }
 
+    function handleChangeImage(evt) {
+        setImage(URL.createObjectURL(evt.target.files[0]))
+    }
+
     return (
         <div className="modal-background">
             <div className="modal-container">
-                <button onClick={() => setShowModal(!showModal)}>X</button>
+                <button id="close-button" onClick={() => setShowModal(!showModal)}>X</button>
+                <img src={image ? image : placeholder} alt="kittyimg" onError={onImageError} />
                 <div className="modal-title">
                     <h1>Make a post!</h1>
                 </div>
                 <div className="modal-body">
                     <form onSubmit={handleSubmit}>
                         <input type="hidden" name="csrfmiddlewaretoken" value={csrftoken} />
-                        <input type="file" ref={fileInputRef} required/>
+                        <input type="file" ref={fileInputRef} required onChange={handleChangeImage} />
                         <input value={title} onChange={(evt) => setTitle(evt.target.value)} required placeholder="Photo Title" />
                         <button type='submit'>Upload Post</button>
                     </form>
