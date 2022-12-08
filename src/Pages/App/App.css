@@ -28,6 +28,7 @@
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 10vh;
+  overflow: hidden;
 }
 
 #root {
@@ -61,7 +62,6 @@ button:hover {
 
   -webkit-animation: cross-fade 32s ease-in-out infinite;
   animation: cross-fade 32s ease-in-out infinite;
-
 }
 
 
