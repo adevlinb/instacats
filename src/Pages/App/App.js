@@ -14,6 +14,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
 
     useEffect(() => {
       async function getPosts() {
@@ -45,9 +46,15 @@ export default function App() {
         </>
         :
         <>
-          <NavBar user={user} setUser={setUser} showModal={showModal} setShowModal={setShowModal} />
-          <div className='body-container'>
-            <LandingPage setUser={setUser}/>
+          <NavBar user={user} setUser={setUser} showModal={showModal} setShowModal={setShowModal} showLogin={showLogin} setShowLogin={setShowLogin}/>
+          <div className='body-container-landing'>
+            <LandingPage setUser={setUser} showLogin={showLogin}/>
+            <div id="cross-fade">
+              <img src="https://media.istockphoto.com/id/1249884596/photo/cool-cat-with-shades.jpg?s=612x612&w=0&k=20&c=8NJ1g2Jf60iVTMnPNPN_iIZbyyQf_mImgDmSl0NHeiI=" alt="coolkitty1" />
+              <img src="https://thediscerningcat.com/wp-content/uploads/2021/02/tabby-cat-wearing-sunglasses.jpg" alt="coolkitty2" />
+              <img src="https://wallpaperaccess.com/full/82955.jpg" alt="coolkitty2" />
+              <img src="https://images.squarespace-cdn.com/content/v1/5ca268ee01232c1d4131debd/1635466037445-MZYSB3WNAHHLAV3KGVBE/unsplash-image-yMSecCHsIBc.jpg?format=1500w" alt="coolkitty2" />
+            </div>
           </div>
         </>
       }

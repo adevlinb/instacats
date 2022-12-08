@@ -16,7 +16,7 @@ export default function DisplayPostCards({ post }) {
         <div className='post-card'>
             <img src={image ? image : placeholder} alt="kittyimg" onError={onImageError} />
             <h5><Link to={`/post/${post.pk}`}>{post.name.substring(0, 10)}</Link></h5>
-
+            
         </div>
     )
 }

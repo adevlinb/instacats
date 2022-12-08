@@ -19,6 +19,9 @@
     object-fit: cover;
 }
 
+.post-card > h5 {
+    margin: 0;
+}
 .post-card > h5 > a {
     margin: 0;
     font-weight: 500;

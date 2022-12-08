@@ -10,6 +10,12 @@
     background-color: rgb(200,200,200);
 }
 
+.footer > a {
+    position: absolute;
+    right: 0;
+    
+}
+
 .footer-text {
     font-weight: 100;
 }

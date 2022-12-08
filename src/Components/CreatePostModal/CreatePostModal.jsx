@@ -43,12 +43,12 @@ export default function CreatePostModal({ showModal, setShowModal, handlePhotoUp
                 <div className="modal-body">
                     <form onSubmit={handleSubmit}>
                         <input type="hidden" name="csrfmiddlewaretoken" value={csrftoken} />
-                        <input type="file" ref={fileInputRef} required onChange={handleChangeImage} />
-                        <input value={title} onChange={(evt) => setTitle(evt.target.value)} required placeholder="Photo Title" />
+                        <div>
+                            <input type="file" ref={fileInputRef} required onChange={handleChangeImage} />
+                            <input value={title} onChange={(evt) => setTitle(evt.target.value)} required placeholder="Photo Title" />
+                        </div>
                         <button type='submit'>Upload Post</button>
                     </form>
-                </div>
-                <div className="modal-footer">
                 </div>
             </div>
         </div>

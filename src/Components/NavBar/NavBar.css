@@ -1,6 +1,25 @@
-nav {
+#nav-logged-in {
     height: 8vh;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+#nav-logged-in > div:nth-child(1) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#nav-logged-in > div:nth-child(1) > h3 {
+    padding-bottom: 5px;
+}
+
+#nav-not-logged-in {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
 }
