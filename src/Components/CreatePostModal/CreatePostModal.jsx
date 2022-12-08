@@ -10,8 +10,8 @@ export default function CreatePostModal({ showModal, setShowModal, handlePhotoUp
 
     const [image, setImage] = useState(null)
     const placeholder = "https://www.namepros.com/attachments/empty-png.89209/";
-    const onImageError = (e) => {
-        e.target.src = placeholder;
+    function onImageError (evt) {
+        evt.target.src = placeholder;
     }
 
     function handleSubmit(evt) {

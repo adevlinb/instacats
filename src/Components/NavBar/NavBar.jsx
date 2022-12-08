@@ -20,10 +20,12 @@ export default function NavBar({ user, setUser, showModal, setShowModal }) {
         <>
         {user ?
             <nav id="nav">
-                <h3>Welcome {user.email}</h3>
-                <Link to="/">InstaCats!</Link>
-                <button onClick={() => setShowModal(!showModal)}>Make A Post!</button>
-                <button onClick={logout}>Logout</button>
+                <div>
+                    <Link to="/"><button>InstaCats!</button></Link>
+                    <h3>{user.email.substring(0,user.email.indexOf("@"))}</h3>
+                </div>
+                <a href=""><button onClick={() => setShowModal(!showModal)}>Make A Post!</button></a>
+                <a href=""><button onClick={logout}>Logout</button></a>
             </nav>
             :
             <nav>

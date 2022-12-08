@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { signUp } from '../../utilities/users-api';
 import getCSRF from '../../utilities/csrftoken'
+import './SignUpForm.css'
 
 export default function SignUpForm({ setUser }) {
     let csrftoken = getCSRF('csrftoken');

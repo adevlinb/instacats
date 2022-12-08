@@ -28,8 +28,8 @@ export default function PostDetailPage({ posts, setPosts }) {
             <DisplayComments comment={comment} key={comment.pk} />
         ));
     }
-    const onImageError = (e) => {
-        e.target.src = placeholder;
+    function onImageError (evt) {
+        evt.target.src = placeholder;
     }
 
     async function submitComment(commentData) {

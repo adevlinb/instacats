@@ -10,9 +10,14 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 html {
   height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-weight: 100;
 }

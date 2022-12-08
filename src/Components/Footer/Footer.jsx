@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div className="footer">
             <h1 className='footer-text'>[Footer Info]</h1>
-            <button><a href="#nav">Back to Top</a></button>
+            <a href="#nav"><button>Back to Top</button></a>
         </div>
     )
 }
