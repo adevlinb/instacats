@@ -42,13 +42,13 @@ export default function PostDetailPage({ posts, setPosts }) {
 
     return (
         <div className='body-container'>
-            <h1>Post Detail Page</h1>
             {postDetail ?
             <div className="post-detail-card" >
-                <h5>{postDetail.pk}</h5>
-                <h5>{postDetail.name}</h5>
-                <img src={image ? image : placeholder} alt="kittyimg" onError={onImageError} />
-                <AddCommentForm submitComment={submitComment} postPK={postDetail.pk}/>
+                <div className='details-container'>
+                    <img src={image ? image : placeholder} alt="kittyimg" onError={onImageError} />
+                    <h5>{postDetail.name}</h5>
+                    <AddCommentForm submitComment={submitComment} postPK={postDetail.pk}/>
+                </div>
                 <div className='comments-container'>
                     {comments}
                 </div>

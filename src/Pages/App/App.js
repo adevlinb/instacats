@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar';
@@ -49,7 +49,6 @@ export default function App() {
           <div className='body-container'>
             <LandingPage setUser={setUser}/>
           </div>
-          <Footer />
         </>
       }
     </>
