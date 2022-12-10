@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser, showModal, setShowModal, showLog
     async function logout() {
         try{
             usersAPI.logout();
-            setUser();
+            setUser(null);
             navigate("/")
         } catch (err) {
             console.log(err)

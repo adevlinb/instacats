@@ -1,12 +1,13 @@
 import { useState, useRef } from 'react';
-import './CreatePostModal.css'
-import getCSRF from '../../utilities/csrftoken'
+import './CreatePostModal.css';
+import getCSRF from '../../utilities/csrftoken';
 
 
 export default function CreatePostModal({ showModal, setShowModal, handlePhotoUpload }) {
     const csrftoken = getCSRF('csrftoken');
     const [title, setTitle] = useState('');
     const fileInputRef = useRef();
+
 
     const [image, setImage] = useState(null)
     const placeholder = "https://www.namepros.com/attachments/empty-png.89209/";
@@ -21,7 +22,6 @@ export default function CreatePostModal({ showModal, setShowModal, handlePhotoUp
         formData.append('csrftoken', csrftoken)
         formData.append('name', title)
         formData.append('image', fileInputRef.current.files[0]);
-        console.log(formData, "upload pic", fileInputRef)
         handlePhotoUpload(formData);
         setShowModal(!showModal);
         setTitle('');

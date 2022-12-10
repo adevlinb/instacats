@@ -60,8 +60,8 @@ button:hover {
   border-radius: 50%;
   object-fit: cover;
 
-  -webkit-animation: cross-fade 32s ease-in-out infinite;
-  animation: cross-fade 32s ease-in-out infinite;
+  -webkit-animation: cross-fade 24s ease-in-out infinite;
+  animation: cross-fade 24s ease-in-out infinite;
 }
 
 
@@ -110,15 +110,15 @@ button:hover {
 }
 
 #cross-fade img:nth-of-type(1) {
-  animation-delay: 24s;
+  animation-delay: 18s;
 }
 
 #cross-fade img:nth-of-type(2) {
-  animation-delay: 16s;
+  animation-delay: 12s;
 }
 
 #cross-fade img:nth-of-type(3) {
-  animation-delay: 8s;
+  animation-delay: 6s;
 }
 
 #cross-fade img:nth-of-type(4) {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar';
 import PostsListPage from '../PostsListPage/PostsListPage'
 import LandingPage from '../LandingPage/LandingPage';
@@ -15,6 +15,7 @@ export default function App() {
   const [posts, setPosts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
+  const navigate = useNavigate();
 
     useEffect(() => {
       async function getPosts() {
@@ -26,10 +27,12 @@ export default function App() {
     }, [user]);
 
     async function handlePhotoUpload(formData) {
-      await postsAPI.createPost(formData)
+      
+      let newPost = await postsAPI.createPost(formData)
       const pResults = await fetch(`http://catstagram.lofty.codes/api/posts/`);
       let postsResults = await pResults.json();
       setPosts(postsResults)
+      navigate(`/post/${newPost.pk}`)
     }
 
   return (
