@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div className="footer">
             <h1 className='footer-text'>[Footer Info]</h1>
-            <a href="#nav"><button>Back to Top</button></a>
+            <a href="#nav-logged-in"><button>Back to Top</button></a>
         </div>
     )
 }

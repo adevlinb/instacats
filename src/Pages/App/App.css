@@ -110,17 +110,17 @@ button:hover {
 }
 
 #cross-fade img:nth-of-type(1) {
-  animation-delay: 0s;
+  animation-delay: 24s;
 }
 
 #cross-fade img:nth-of-type(2) {
-  animation-delay: 8s;
-}
-
-#cross-fade img:nth-of-type(3) {
   animation-delay: 16s;
 }
 
+#cross-fade img:nth-of-type(3) {
+  animation-delay: 8s;
+}
+
 #cross-fade img:nth-of-type(4) {
-  animation-delay: 24s;
+  animation-delay: 0s;
 }
